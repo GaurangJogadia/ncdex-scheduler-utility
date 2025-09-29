@@ -1,0 +1,27 @@
+{
+  "name": "ncdex-scheduler-utility",
+  "version": "1.0.0",
+  "description": "A Node.js task scheduler utility for NCDEX operations",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scheduler",
+    "tasks",
+    "automation",
+    "ncdex"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "pg": "^8.16.3"
+  }
+}

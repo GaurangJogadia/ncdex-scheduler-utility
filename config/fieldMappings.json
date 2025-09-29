@@ -1,0 +1,224 @@
+{
+  "sugarcrm_to_portal_members": {
+    "module": "Accounts",
+    "target_module": "Members",
+    "field_mappings": {
+      "id": {
+        "portal_field": "sugarcrm_id",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM id becomes Portal Member sugarcrm_id"
+      },
+      "tm_id_c": {
+        "portal_field": "tm_id_c",
+        "transform": "direct",
+        "required": false,
+        "description": "Account tm_id_c becomes Portal Member tm_id_c"
+      },
+      "name": {
+        "portal_field": "member_name",
+        "transform": "direct",
+        "required": false,
+        "description": "Account name becomes Portal Member member_name"
+      },
+      "status_c": {
+        "portal_field": "status_c",
+        "transform": "direct",
+        "required": false,
+        "description": "Account status_c becomes Portal Member status_c"
+      },
+      "membership_category_c": {
+        "portal_field": "membership_category_c",
+        "transform": "direct",
+        "required": false,
+        "description": "Account membership_category_c becomes Portal Member membership_category_c"
+      }
+    }
+  },
+  "sugarcrm_to_portal_auditors": {
+    "module": "Auditors",
+    "target_module": "Auditors",
+    "field_mappings": {
+      "id": {
+        "portal_field": "sugarcrm_id",
+        "transform": "direct",
+        "required": true,
+        "description": "SugarCRM Auditor id becomes Portal Auditor sugarcrm_id"
+      },
+      "name": {
+        "portal_field": "name",
+        "transform": "direct",
+        "required": true,
+        "description": "Auditor name maps directly to Portal Auditor name"
+      },
+      "auditor_user_id_c": {
+        "portal_field": "auditor_user_id_c",
+        "transform": "direct",
+        "required": false,
+        "description": "Auditor user ID maps to Portal Auditor user ID"
+      },
+      "email_id_c": {
+        "portal_field": "email_id_c",
+        "transform": "direct",
+        "required": false,
+        "description": "Auditor email maps to Portal Auditor email"
+      },
+      "registration_no_c": {
+        "portal_field": "registration_no_c",
+        "transform": "direct",
+        "required": false,
+        "description": "Auditor registration number maps to Portal Auditor registration number"
+      }
+    }
+  },
+  "sugarcrm_to_portal_users": {
+    "module": "ComplianceOfficer",
+    "target_module": "MemberUsers",
+    "field_mappings": {
+      "id": {
+        "portal_field": "co_sugar_id",
+        "transform": "direct",
+        "required": false,
+        "description": "Compliance Officer id becomes Portal MemberUsers co_sugar_id"
+      },
+      "name": {
+        "portal_field": "co_name",
+        "transform": "direct",
+        "required": false,
+        "description": "Compliance Officer name becomes Portal MemberUsers co_name"
+      },
+      "accounts_comp_compliance_officers_1accounts_ida": {
+        "portal_field": "member_crm_id",
+        "transform": "direct",
+        "required": false,
+        "description": "Compliance Officer account link becomes Portal MemberUsers member_crm_id"
+      },
+      "officemobile_c": {
+        "portal_field": "mobileno",
+        "transform": "direct",
+        "required": false,
+        "description": "Compliance Officer mobile number becomes Portal MemberUsers mobileno"
+      },
+      "office_email_c": {
+        "portal_field": "email",
+        "transform": "direct",
+        "required": false,
+        "description": "Compliance Officer email becomes Portal MemberUsers email"
+      }
+    }
+  },
+  "sugarcrm_to_portal_cases": {
+    "module": "Cases",
+    "target_module": "Cases",
+    "field_mappings": {
+      "id": {
+        "portal_field": "case_id",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case id becomes Portal Case case_id"
+      },
+      "name": {
+        "portal_field": "name",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case name becomes Portal Case name"
+      },
+      "case_number": {
+        "portal_field": "case_number",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case number becomes Portal Case case_number"
+      },
+      "account_id": {
+        "portal_field": "member_id",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case member_id becomes Portal Case member_id"
+      },
+      "type": {
+        "portal_field": "type",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case type becomes Portal Case type"
+      },
+      "sub_type": {
+        "portal_field": "sub_type",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case sub_type becomes Portal Case sub_type"
+      },
+      "description": {
+        "portal_field": "audit_details",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case audit_details becomes Portal Case audit_details"
+      },
+      "audit_due_date_c": {
+        "portal_field": "audit_due_date",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case audit_due_date becomes Portal Case audit_due_date"
+      },
+      "aud_auditor_id_c": {
+        "portal_field": "audit_user_id",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case audit_user_id becomes Portal Case audit_user_id"
+      },
+      "stage_c": {
+        "portal_field": "stage",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case stage becomes Portal Case stage"
+      },
+      "auditor_visit_status_c": {
+        "portal_field": "auditor_visit_status",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case auditor_visit_status becomes Portal Case auditor_visit_status"
+      },
+      "member_visit_status_c": {
+        "portal_field": "member_visit_status",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case member_visit_status becomes Portal Case member_visit_status"
+      },
+      "auditor_latitude_c": {
+        "portal_field": "auditor_latitude",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case auditor_latitude becomes Portal Case auditor_latitude"
+      },
+      "auditor_longitude_c": {
+        "portal_field": "auditor_longitude",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case auditor_longitude becomes Portal Case auditor_longitude"
+      },
+      "member_latitude_c": {
+        "portal_field": "member_latitude",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case member_latitude becomes Portal Case member_latitude"
+      },
+      "member_longitude_c": {
+        "portal_field": "member_longitude",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case member_longitude becomes Portal Case member_longitude"
+      },
+      "comments_c": {
+        "portal_field": "comment",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case comment becomes Portal Case comment"
+      },
+      "rejection_type_c": {
+        "portal_field": "rejection_type",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case rejection_type becomes Portal Case rejection_type"
+      }
+    }
+  }
+}
