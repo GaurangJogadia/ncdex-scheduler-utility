@@ -5,6 +5,7 @@
 
 import Logger from './logger.js';
 import { logIntegration } from './integrationLogger.js';
+import { getPortalToken } from './portalAuth.js';
 
 /**
  * Call Portal API with generic configuration
@@ -27,10 +28,14 @@ async function callPortalAPI(portalUrl, data, options = {}) {
         console.log(`    🔄 Making Portal API call to: ${portalUrl}`);
         console.log(`    📤 Sending ${data.length} records`);
         
+        // Get portal authentication token
+        const token = await getPortalToken();
+        
         const response = await fetch(portalUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(data)
         });
