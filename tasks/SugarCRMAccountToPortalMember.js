@@ -139,19 +139,21 @@ export default async function SugarCRMAccountToPortalMember() {
             
             // Log processed records
             await Logger.dataProcessing('Processed records ready for portal sync', processedRecords, {
-                totalRecords: processedRecords.length,
-                accountsWithOfficers,
-                totalComplianceOfficers
+                totalRecords: processedRecords.length
             });
             
             // Sync to Portal Members
             const portalResponse = await syncToPortalMembers(processedRecords);
             
             console.log(`\n🎯 Portal Member Sync Results:`);
-            console.log(`  • Total Records: ${portalResponse.length}`);
+            const responseArray = Array.isArray(portalResponse) ? portalResponse : [];
+            console.log(`  • Total Records: ${responseArray.length}`);
+            if (!Array.isArray(portalResponse)) {
+                console.log('  ⚠️  Portal response was not an array; normalized to empty array for summary');
+            }
             
             // Count different statuses
-            const statusCounts = portalResponse.reduce((counts, record) => {
+            const statusCounts = responseArray.reduce((counts, record) => {
                 counts[record.internalStatus] = (counts[record.internalStatus] || 0) + 1;
                 return counts;
             }, {});
@@ -162,9 +164,9 @@ export default async function SugarCRMAccountToPortalMember() {
             
             // Log sync results
             await Logger.info('Portal Member sync completed', {
-                totalRecords: portalResponse.length,
+                totalRecords: responseArray.length,
                 statusCounts,
-                portalResponse
+                portalResponse: responseArray
             });
         }
             

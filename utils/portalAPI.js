@@ -31,13 +31,25 @@ async function callPortalAPI(portalUrl, data, options = {}) {
         // Get portal authentication token
         const token = await getPortalToken();
         
+        // Prepare request body: preserve arrays as arrays (portal expects array payloads)
+        const isArrayPayload = Array.isArray(data);
+        const bodyPayload = isArrayPayload
+            ? JSON.stringify(data)
+            : JSON.stringify({
+                // for object payloads we can safely include username inline
+                ...data,
+                portal_username: process.env.PORTAL_USERNAME || 'admin'
+            });
+
         const response = await fetch(portalUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                // include portal username via header to avoid altering array payloads
+                'X-Portal-Username': process.env.PORTAL_USERNAME || 'admin'
             },
-            body: JSON.stringify(data)
+            body: bodyPayload
         });
         
         console.log(`    📥 Response received: ${response.status} ${response.statusText}`);

@@ -159,7 +159,7 @@
         "required": false,
         "description": "SugarCRM Case audit_due_date becomes Portal Case audit_due_date"
       },
-      "aud_auditor_id_c": {
+      "aud_auditor_cases_1aud_auditor_ida": {
         "portal_field": "audit_user_id",
         "transform": "direct",
         "required": false,

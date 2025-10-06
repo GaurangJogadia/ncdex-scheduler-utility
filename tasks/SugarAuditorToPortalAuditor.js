@@ -77,10 +77,11 @@ export default async function sugarAuditorToPortalAuditor() {
         const portalResponse = await syncToPortalAuditors(processedRecords);
         
         console.log(`\n🎯 Portal Auditor Sync Results:`);
-        console.log(`  • Total Records: ${portalResponse.length}`);
+        const responseArray = Array.isArray(portalResponse) ? portalResponse : [];
+        console.log(`  • Total Records: ${responseArray.length}`);
         
         // Count different statuses
-        const statusCounts = portalResponse.reduce((counts, record) => {
+        const statusCounts = responseArray.reduce((counts, record) => {
             counts[record.internalStatus] = (counts[record.internalStatus] || 0) + 1;
             return counts;
         }, {});
