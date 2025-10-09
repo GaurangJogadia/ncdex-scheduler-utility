@@ -60,12 +60,12 @@ export default async function SugarImportCasesToPortalCases() {
             console.log(`  🔍 No date filter - fetching all records`);
         }
 
-        filters.push({
+        /*filters.push({
             isimport_c: {
                 "$equals": "0"
             }
         });
-        console.log('  🔍 Filter: isimport_c equals "0"');
+        console.log('  🔍 Filter: isimport_c equals "0"');*/
         
         // Get fields to fetch based on field mapping configuration
         const fields = await getSugarcrmFields('sugarcrm_to_portal_cases');

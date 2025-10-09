@@ -99,7 +99,7 @@
         "required": false,
         "description": "Compliance Officer mobile number becomes Portal MemberUsers mobileno"
       },
-      "office_email_c": {
+      "primary_email_address_c": {
         "portal_field": "email",
         "transform": "direct",
         "required": false,
@@ -141,7 +141,7 @@
         "required": false,
         "description": "SugarCRM Case type becomes Portal Case type"
       },
-      "sub_type": {
+      "sub_type_c": {
         "portal_field": "sub_type",
         "transform": "direct",
         "required": false,
@@ -159,53 +159,35 @@
         "required": false,
         "description": "SugarCRM Case audit_due_date becomes Portal Case audit_due_date"
       },
+      "from_period_c": {
+        "portal_field": "from_period",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case from_period_c becomes Portal Case from_period"
+      },
+      "to_period_c": {
+        "portal_field": "to_period",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case to_period_c becomes Portal Case to_period"
+      },
       "aud_auditor_cases_1aud_auditor_ida": {
         "portal_field": "audit_user_id",
         "transform": "direct",
         "required": false,
         "description": "SugarCRM Case audit_user_id becomes Portal Case audit_user_id"
       },
+      "margin_c": {
+        "portal_field": "margin",
+        "transform": "direct",
+        "required": false,
+        "description": "SugarCRM Case margin_c becomes Portal Case margin"
+      },
       "stage_c": {
         "portal_field": "stage",
         "transform": "direct",
         "required": false,
         "description": "SugarCRM Case stage becomes Portal Case stage"
-      },
-      "auditor_visit_status_c": {
-        "portal_field": "auditor_visit_status",
-        "transform": "direct",
-        "required": false,
-        "description": "SugarCRM Case auditor_visit_status becomes Portal Case auditor_visit_status"
-      },
-      "member_visit_status_c": {
-        "portal_field": "member_visit_status",
-        "transform": "direct",
-        "required": false,
-        "description": "SugarCRM Case member_visit_status becomes Portal Case member_visit_status"
-      },
-      "auditor_latitude_c": {
-        "portal_field": "auditor_latitude",
-        "transform": "direct",
-        "required": false,
-        "description": "SugarCRM Case auditor_latitude becomes Portal Case auditor_latitude"
-      },
-      "auditor_longitude_c": {
-        "portal_field": "auditor_longitude",
-        "transform": "direct",
-        "required": false,
-        "description": "SugarCRM Case auditor_longitude becomes Portal Case auditor_longitude"
-      },
-      "member_latitude_c": {
-        "portal_field": "member_latitude",
-        "transform": "direct",
-        "required": false,
-        "description": "SugarCRM Case member_latitude becomes Portal Case member_latitude"
-      },
-      "member_longitude_c": {
-        "portal_field": "member_longitude",
-        "transform": "direct",
-        "required": false,
-        "description": "SugarCRM Case member_longitude becomes Portal Case member_longitude"
       },
       "comments_c": {
         "portal_field": "comment",
