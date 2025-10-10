@@ -218,7 +218,7 @@ async function processRecordsForPortalCases(records) {
             // Transform SugarCRM record to Portal Cases format
             const transformation = await transformSugarcrmToPortal(record, 'sugarcrm_to_portal_cases');
             
-            // Create processed record with all required fields
+            // Create processed record strictly per field mappings in sugarcrm_to_portal_cases
             const processed = {
                 case_id: transformation.data.case_id || null,
                 name: transformation.data.name || null,
@@ -228,18 +228,13 @@ async function processRecordsForPortalCases(records) {
                 sub_type: transformation.data.sub_type || null,
                 audit_details: transformation.data.audit_details || null,
                 audit_due_date: transformation.data.audit_due_date || null,
+                from_period: transformation.data.from_period || null,
+                to_period: transformation.data.to_period || null,
                 audit_user_id: transformation.data.audit_user_id || null,
+                margin: transformation.data.margin || null,
                 stage: transformation.data.stage || null,
-                auditor_visit_status: transformation.data.auditor_visit_status || null,
-                member_visit_status: transformation.data.member_visit_status || null,
-                auditor_latitude: transformation.data.auditor_latitude || null,
-                auditor_longitude: transformation.data.auditor_longitude || null,
-                member_latitude: transformation.data.member_latitude || null,
-                member_longitude: transformation.data.member_longitude || null,
-                visit_status: transformation.data.visit_status || null,
                 comment: transformation.data.comment || null,
-                rejection_type: transformation.data.rejection_type || null,
-                portal_submitted_date: transformation.data.portal_submitted_date || null
+                rejection_type: transformation.data.rejection_type || null
             };
             
             console.log(`    ✅ Processed case: ${record.name || record.id}`);
@@ -257,18 +252,13 @@ async function processRecordsForPortalCases(records) {
                 sub_type: null,
                 audit_details: null,
                 audit_due_date: null,
+                from_period: null,
+                to_period: null,
                 audit_user_id: null,
+                margin: null,
                 stage: null,
-                auditor_visit_status: null,
-                member_visit_status: null,
-                auditor_latitude: null,
-                auditor_longitude: null,
-                member_latitude: null,
-                member_longitude: null,
-                visit_status: null,
                 comment: null,
-                rejection_type: null,
-                portal_submitted_date: null
+                rejection_type: null
             });
         }
     }

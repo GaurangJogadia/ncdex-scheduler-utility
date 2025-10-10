@@ -135,13 +135,14 @@ async function processRecordsForPortalAuditors(auditorRecords) {
             // Transform SugarCRM auditor record to Portal Auditor format using field transformer
             const transformed = await transformSugarcrmToPortal(record, 'sugarcrm_to_portal_auditors');
             
-            // Extract only the data field with the 5 required fields
+            // Extract only the data field with the required fields per mapping
             const processed = {
                 sugarcrm_id: transformed.data.sugarcrm_id,
                 name: transformed.data.name,
                 auditor_user_id_c: transformed.data.auditor_user_id_c,
                 email_id_c: transformed.data.email_id_c,
-                registration_no_c: transformed.data.registration_no_c
+                registration_no_c: transformed.data.registration_no_c,
+                mobileno: transformed.data.mobileno || null
             };
             
             processedRecords.push(processed);
@@ -155,7 +156,8 @@ async function processRecordsForPortalAuditors(auditorRecords) {
                 name: record.name || 'Unknown',
                 auditor_user_id_c: record.auditor_user_id_c || null,
                 email_id_c: record.email_id_c || null,
-                registration_no_c: record.registration_no_c || null
+                registration_no_c: record.registration_no_c || null,
+                mobileno: record.contact_no_c || null
             });
         }
     }

@@ -68,6 +68,12 @@
         "transform": "direct",
         "required": false,
         "description": "Auditor registration number maps to Portal Auditor registration number"
+      },
+      "contact_no_c": {
+        "portal_field": "mobileno",
+        "transform": "direct",
+        "required": false,
+        "description": "Auditor contact_no_c maps to Portal Auditor mobileno"
       }
     }
   },
@@ -129,7 +135,7 @@
         "required": false,
         "description": "SugarCRM Case number becomes Portal Case case_number"
       },
-      "account_id": {
+      "tmid_c": {
         "portal_field": "member_id",
         "transform": "direct",
         "required": false,
@@ -171,7 +177,7 @@
         "required": false,
         "description": "SugarCRM Case to_period_c becomes Portal Case to_period"
       },
-      "aud_auditor_cases_1aud_auditor_ida": {
+      "auditor_user_id_c": {
         "portal_field": "audit_user_id",
         "transform": "direct",
         "required": false,
