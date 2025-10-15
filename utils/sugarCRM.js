@@ -3,13 +3,15 @@
  * Generic methods for interacting with SugarCRM REST API
  */
 
+import { getSecretEnv } from './secrets.js';
+
 /**
  * Authenticate with SugarCRM and get OAuth token
  * @returns {Promise<string>} OAuth token
  */
 export async function authenticateSugarCRM() {
     const username = process.env.SUGARCRM_USERNAME;
-    const password = process.env.SUGARCRM_PASSWORD;
+    const password = getSecretEnv('SUGARCRM_PASSWORD');
     const apiUrl = process.env.SUGARCRM_API_URL;
     
     if (!username || !password || !apiUrl) {

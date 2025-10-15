@@ -4,6 +4,7 @@
  */
 
 import Logger from './logger.js';
+import { getSecretEnv } from './secrets.js';
 
 let cachedToken = null;
 let tokenExpiry = null;
@@ -28,7 +29,7 @@ export async function getPortalToken(baseUrl = null) {
         
         const loginData = {
             username: process.env.PORTAL_USERNAME || 'admin',
-            password: process.env.PORTAL_PASSWORD || 'admin123'
+            password: getSecretEnv('PORTAL_PASSWORD') || 'admin123'
         };
         
         const response = await fetch(loginUrl, {

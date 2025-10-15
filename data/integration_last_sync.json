@@ -4,22 +4,22 @@
       "module_name": "Members",
       "integration_name": "SugarCRM Accounts to Portal Members",
       "direction": "inbound",
-      "last_sync_at": "2025-10-10T09:42:14.578Z",
-      "updated_at": "2025-10-10T09:42:17.611Z",
+      "last_sync_at": "2025-10-15T06:32:58.011Z",
+      "updated_at": "2025-10-15T06:33:04.804Z",
       "status": "success",
       "metadata": {
-        "records_fetched": 16,
+        "records_fetched": 15,
         "sugarcrm_module": "Accounts",
-        "sync_duration": "2025-10-10T09:42:14.578Z",
-        "last_sync_date_used": "2025-10-09T09:15:16.151Z"
+        "sync_duration": "2025-10-15T06:32:58.011Z",
+        "last_sync_date_used": "2025-10-10T06:32:43.573Z"
       }
     },
     {
       "module_name": "Auditors",
       "integration_name": "SugarCRM Auditor to Portal Auditor",
       "direction": "inbound",
-      "last_sync_at": "2025-10-10T09:42:52.566Z",
-      "updated_at": "2025-10-10T09:42:52.570Z",
+      "last_sync_at": "2025-10-15T06:34:29.529Z",
+      "updated_at": "2025-10-15T06:34:29.531Z",
       "status": "completed",
       "metadata": {
         "records_fetched": 3,
@@ -32,28 +32,28 @@
       "module_name": "ComplianceOfficers",
       "integration_name": "SugarCRM Compliance Officer to Portal Users",
       "direction": "inbound",
-      "last_sync_at": "2025-10-10T10:18:54.930Z",
-      "updated_at": "2025-10-10T10:18:54.931Z",
+      "last_sync_at": "2025-10-15T06:35:08.962Z",
+      "updated_at": "2025-10-15T06:35:08.963Z",
       "status": "success",
       "metadata": {
-        "records_fetched": 0,
+        "records_fetched": 2,
         "sugarcrm_module": "comp_Compliance_Officers",
-        "sync_duration": "2025-10-10T10:18:54.930Z",
-        "last_sync_date_used": "2025-10-10T09:43:16.129Z"
+        "sync_duration": "2025-10-15T06:35:08.962Z",
+        "last_sync_date_used": "2025-10-10T09:46:56.522Z"
       }
     },
     {
       "module_name": "Cases",
       "integration_name": "SugarCRM Cases to Portal Cases",
       "direction": "inbound",
-      "last_sync_at": "2025-10-10T09:43:45.941Z",
-      "updated_at": "2025-10-10T09:43:45.942Z",
+      "last_sync_at": "2025-10-15T06:36:05.814Z",
+      "updated_at": "2025-10-15T06:36:05.815Z",
       "status": "success",
       "metadata": {
-        "records_fetched": 50,
+        "records_fetched": 11,
         "sugarcrm_module": "Cases",
-        "sync_duration": "2025-10-10T09:43:45.941Z",
-        "last_sync_date_used": "2025-10-09T09:25:29.748Z"
+        "sync_duration": "2025-10-15T06:36:05.814Z",
+        "last_sync_date_used": "2025-10-10T10:01:46.243Z"
       }
     }
   ],

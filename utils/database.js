@@ -4,6 +4,7 @@
  */
 
 import pkg from 'pg';
+import { getSecretEnv } from './secrets.js';
 const { Pool } = pkg;
 
 // Database configuration from environment variables
@@ -11,7 +12,7 @@ const dbConfig = {
     user: process.env.DB_USER || 'postgres',
     host: process.env.DB_HOST || 'localhost',
     database: process.env.DB_NAME || 'audit_portal',
-    password: String(process.env.DB_PASSWORD || ''),
+    password: String(getSecretEnv('DB_PASSWORD') || ''),
     port: parseInt(process.env.DB_PORT) || 5432,
     // Connection pool settings
     max: 20, // Maximum number of clients in the pool
